@@ -17,6 +17,6 @@ $factory->define(student::class, function (Faker $faker) {
 
         'gender'=>$gender,
         
-       'year'=>$faker->year
+       'year'=>$faker->year('now')
     ];
 });

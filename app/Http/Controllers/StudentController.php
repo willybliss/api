@@ -43,9 +43,10 @@ class StudentController extends Controller
          $student->year = $request->input('year');
        
         if($student->save()) {
-            return new studentResource($student);
+            return (new studentResource($student))
+            ->response()->setStatusCode(201);
         }
-
+       
 
     }
 
@@ -104,4 +105,5 @@ class StudentController extends Controller
 
         }
     }
+    
 }
